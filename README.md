@@ -1,24 +1,54 @@
-# README
+# Health Base
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+### Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+- Ruby 2.6.6
+- Rails 6.1.1
+- Yarn or NPM
 
-* System dependencies
+### Check out the repository
 
-* Configuration
+```bash
+git clone git@github.com:anjoseb121/
+health-base.git
+```
 
-* Database creation
+### Install dependencies
+Ruby gems
+```bash
+bundle
+```
+Node packages
+```
+yarn install
+```
 
-* Database initialization
+### Create and setup the database
 
-* How to run the test suite
+Run the following commands to create and setup the database.
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+bin/setup
+```
 
-* Deployment instructions
+You should be able to run the server
 
-* ...
+```bash
+rails s
+```
+
+## Tests
+
+You should be able to run the test suit with
+
+```bash
+rspec spec
+```
+
+## Information
+### Domain model
+![Domain model image](/erd.png "Optional Title")
+
