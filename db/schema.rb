@@ -10,13 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_154920) do
+ActiveRecord::Schema.define(version: 2022_01_24_162622) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_categories_on_name"
+  end
+
+  create_table "patient_products", force: :cascade do |t|
+    t.integer "patient_id", null: false
+    t.integer "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_patient_products_on_patient_id"
+    t.index ["product_id"], name: "index_patient_products_on_product_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.date "dob"
+    t.integer "state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["state_id"], name: "index_patients_on_state_id"
   end
 
   create_table "product_states", force: :cascade do |t|
@@ -52,6 +71,9 @@ ActiveRecord::Schema.define(version: 2022_01_24_154920) do
     t.index ["abbreviation"], name: "index_states_on_abbreviation"
   end
 
+  add_foreign_key "patient_products", "patients"
+  add_foreign_key "patient_products", "products"
+  add_foreign_key "patients", "states"
   add_foreign_key "product_states", "products"
   add_foreign_key "product_states", "states"
   add_foreign_key "products", "categories"
