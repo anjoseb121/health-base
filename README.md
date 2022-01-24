@@ -12,18 +12,12 @@ The setups steps expect following tools installed on the system.
 ### Check out the repository
 
 ```bash
-git clone git@github.com:anjoseb121/
-health-base.git
+git clone git@github.com:anjoseb121/health-base.git
 ```
 
-### Install dependencies
-Ruby gems
+### Create database config file
 ```bash
-bundle
-```
-Node packages
-```
-yarn install
+cp config/database.test.yml config/database.yml
 ```
 
 ### Create and setup the database
