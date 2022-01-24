@@ -27,3 +27,5 @@ package-lock.json
 .yarn
 .DS_Store
 coverage
+db/*.sqlite3
+public/packs-test
