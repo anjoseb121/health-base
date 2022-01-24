@@ -28,10 +28,13 @@ Run the following commands to create and setup the database.
 bin/setup
 ```
 
-You should be able to run the server
+You should be able to run the server or run the seeds file
 
 ```bash
 rails s
+```
+```bash
+rails db:seed
 ```
 
 ## Tests

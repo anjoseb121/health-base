@@ -20,7 +20,7 @@ RSpec.describe Product, type: :model do
         expect(described_class.by_state(product.states.first)).to eq [product]
       end
     end
-    context '.by_age' do
+    context '.by_state_and_age' do
       context 'a product cannot be offered to patients of certain age by state' do
         let!(:state) { create(:state) }
         let!(:products) { create_list(:product, 3) }
